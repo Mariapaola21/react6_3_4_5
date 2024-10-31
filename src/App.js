@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Provider } from "react-redux";
+import { store } from "./Ejercicio4/Store";
+import CounterComponent from "./Ejercicio4/CounterComponent";
+// import { ThemeProvider } from "./Ejercicio3/Contexto";
+// import ThemeToggle from "./Ejercicio3/Cambio";
+// import Texto from "./Ejercicio3/texto";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+// function App() { /*ejercicio 3 */
+//   return (
+//     <ThemeProvider>
+//       <ThemeToggle />
+//       <Texto/>
+//     </ThemeProvider>
+//   );
+// }
+
+// export default App
+
+/*ejercicio numero 4 */
+const App =()=>{
+  return(
+    <Provider store={store}>
+      <div className="App"> 
+        <h1>Mi contador con Redux</h1>
+        <CounterComponent/>
+      </div>
+    </Provider>
   );
 }
-
 export default App;
